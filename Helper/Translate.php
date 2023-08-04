@@ -104,7 +104,7 @@ class Translate extends \Magento\Framework\Translate
         if ($file) {
             $relativePath = $this->_getRelativeFilePath($file);
             foreach ($this->_getFileData($file) as $key => $value) {
-                if ($key === $value) {
+                if ($key === $value || empty($value)) {
                     continue;
                 }
                 $this->_data['theme'][htmlspecialchars($key)] = [
